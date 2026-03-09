@@ -1,0 +1,5 @@
+package com.smartnoticeboard.config;
+
+public class SecurityConfig {
+
+}

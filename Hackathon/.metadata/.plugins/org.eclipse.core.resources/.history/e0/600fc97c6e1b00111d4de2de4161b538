@@ -1,0 +1,5 @@
+package com.smartnoticeboard.controller;
+
+public class UserController {
+
+}

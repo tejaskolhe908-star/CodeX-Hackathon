@@ -1,0 +1,5 @@
+package com.smartnoticeboard.service;
+
+public class UserService {
+
+}

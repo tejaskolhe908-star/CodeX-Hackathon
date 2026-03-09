@@ -1,0 +1,40 @@
+package com.smartnoticeboard.controller;
+
+import com.smartnoticeboard.entity.Notice;
+import com.smartnoticeboard.service.NoticeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/notice")
+public class NoticeController {
+
+    @Autowired
+    private NoticeService noticeService;
+
+    // Add notice
+    @PostMapping("/add")
+    public Notice addNotice(@RequestBody Notice notice) {
+        return noticeService.addNotice(notice);
+    }
+
+    // Get all notices
+    @GetMapping("/all")
+    public List<Notice> getAllNotices() {
+        return noticeService.getAllNotices();
+    }
+
+    // Delete notice
+    @DeleteMapping("/delete/{id}")
+    public String deleteNotice(@PathVariable Long id) {
+        noticeService.deleteNotice(id);
+        return "Notice deleted successfully";
+    }
+    
+    @GetMapping("/role/{role}")
+    public List<Notice> getNoticesByRole(@PathVariable String role) {
+        return noticeService.getNoticesByRole(role);
+    }
+}
