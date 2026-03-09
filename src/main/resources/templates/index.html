@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>Smart Notice Board</title>
+
+<style>
+
+body{
+font-family: Arial;
+background: linear-gradient(120deg,#1e3c72,#2a5298);
+color:white;
+text-align:center;
+padding:40px;
+}
+
+.container{
+width:600px;
+margin:auto;
+background:white;
+color:black;
+padding:30px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+input,select,textarea{
+width:90%;
+padding:10px;
+margin:10px;
+border-radius:5px;
+border:1px solid gray;
+}
+
+button{
+background:#1e3c72;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#2a5298;
+}
+
+.notice{
+background:#f4f4f4;
+padding:10px;
+margin:10px;
+border-radius:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>📢 Smart Notice Board</h1>
+
+<div class="container">
+
+<h2>Add Notice</h2>
+
+<form action="/notice/add" method="post">
+
+<input type="text" name="title" placeholder="Enter Title" required>
+
+<textarea name="description" placeholder="Enter Description"></textarea>
+
+<select name="role">
+<option value="STUDENT">Student</option>
+<option value="FACULTY">Faculty</option>
+</select>
+
+<br>
+
+<button type="submit">Add Notice</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
